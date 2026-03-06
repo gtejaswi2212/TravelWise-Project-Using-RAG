@@ -1,0 +1,173 @@
+[
+  {
+    "title": "Lower Manhattan Icons Walk",
+    "category": "itinerary",
+    "neighborhood": "Lower Manhattan",
+    "tags": ["itinerary", "landmarks", "walking"],
+    "content": "A strong one-day Lower Manhattan route is: Battery Park and Statue of Liberty ferry views in the morning, Wall Street and Federal Hall before lunch, One World Observatory in the afternoon, and sunset at the Brooklyn Bridge Park waterfront. Use the 4/5 or R/W subway lines to move quickly between stops.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Manhattan Food Tour Backbone",
+    "category": "food",
+    "neighborhood": "Manhattan",
+    "tags": ["food", "tour", "budget"],
+    "content": "For a one-day Manhattan food tour, combine neighborhoods: breakfast in Chinatown (congee, buns), lunch in the East Village (ramen or sandwiches), afternoon snacks in Chelsea Market, and dinner in Koreatown. Keep subway rides under 20 minutes by grouping stops by area.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Museums Near Central Park",
+    "category": "museum",
+    "neighborhood": "Upper East Side and Upper West Side",
+    "tags": ["museum", "central park", "family"],
+    "content": "Major museums near Central Park include The Metropolitan Museum of Art on Fifth Avenue, Solomon R. Guggenheim Museum on the east side, and the American Museum of Natural History on the west side near Central Park West. These can be combined with short park walks between visits.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Budget NYC Transport Tips",
+    "category": "transport",
+    "neighborhood": "Citywide",
+    "tags": ["transport", "budget", "subway"],
+    "content": "For budget travel, prioritize subway and bus over taxis. Use OMNY tap-to-pay or a MetroCard and plan routes with transfer-friendly hubs like Times Sq-42 St and Fulton Center. Walking 10 to 15 minutes between nearby attractions can save both time and money in dense neighborhoods.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Brooklyn Pizza Focus",
+    "category": "food",
+    "neighborhood": "Brooklyn",
+    "tags": ["pizza", "brooklyn", "dinner"],
+    "content": "Popular Brooklyn pizza neighborhoods include DUMBO, Williamsburg, and Park Slope. A practical route is Juliana's or Grimaldi's area in DUMBO for classic pies, then L'industrie-style slices in Williamsburg, with evening options around Carroll Gardens and Park Slope.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Times Square Evening Plan",
+    "category": "nightlife",
+    "neighborhood": "Midtown",
+    "tags": ["times square", "evening", "shows"],
+    "content": "Near Times Square in the evening, pair a Broadway or Off-Broadway show with dinner in Hell's Kitchen. For lighter plans, visit Bryant Park, the New York Public Library exterior, and rooftop viewpoints in Midtown. Expect heavy crowds from 6 PM onward.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Two-Day Budget Itinerary Framework",
+    "category": "itinerary",
+    "neighborhood": "Manhattan and Brooklyn",
+    "tags": ["budget", "2-day", "itinerary"],
+    "content": "Budget 2-day plan: Day 1 lower Manhattan and Brooklyn Bridge walk, cheap eats in Chinatown, free Staten Island Ferry views at sunset. Day 2 Central Park, museum choice, and evening in DUMBO or Brooklyn Heights Promenade. Mix free landmarks with one paid attraction each day.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Rainy Day NYC Options",
+    "category": "activities",
+    "neighborhood": "Citywide",
+    "tags": ["rain", "indoor", "family"],
+    "content": "For rainy weather, prioritize indoor clusters: Hudson Yards and The Shops, MoMA and nearby Midtown galleries, or Natural History Museum with nearby cafes. Keep transit simple by choosing one neighborhood cluster per half-day.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Central Park Route",
+    "category": "park",
+    "neighborhood": "Central Park",
+    "tags": ["park", "walking", "landmarks"],
+    "content": "A practical Central Park route begins at Columbus Circle, passes Bethesda Terrace, Bow Bridge, and Sheep Meadow, and exits near the Met or Guggenheim for museum add-ons. Allocate 2 to 3 hours depending on photo stops.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Queens Food Day",
+    "category": "food",
+    "neighborhood": "Queens",
+    "tags": ["food", "queens", "global cuisine"],
+    "content": "Queens food-focused day trips work best in Flushing and Jackson Heights. Explore dumplings, hand-pulled noodles, and regional South Asian options. Subway access via the 7 and E/F/R lines makes cross-neighborhood food hopping practical.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Top Observation Deck Choices",
+    "category": "landmark",
+    "neighborhood": "Midtown and Hudson Yards",
+    "tags": ["views", "observation deck", "sunset"],
+    "content": "Common skyline view choices are Top of the Rock (good Empire State Building views), SUMMIT One Vanderbilt (immersive modern experience), and Edge at Hudson Yards (open-air thrill). Reserve timed tickets for sunset slots, which are usually busiest.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Family-Friendly NYC Core",
+    "category": "family",
+    "neighborhood": "Manhattan",
+    "tags": ["kids", "family", "parks", "museum"],
+    "content": "Family-friendly staples include Central Park playgrounds, American Museum of Natural History, and the Intrepid Museum. Build breaks around snack stops and short transit legs to avoid fatigue for young travelers.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Nightlife Areas Overview",
+    "category": "nightlife",
+    "neighborhood": "Manhattan and Brooklyn",
+    "tags": ["nightlife", "bars", "music"],
+    "content": "For nightlife, use neighborhood style: East Village for casual bars, Lower East Side for high-energy nights, Williamsburg for music venues, and West Village for quieter cocktail bars. Weekends get busy after 10 PM.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Museum Hopping Strategy",
+    "category": "museum",
+    "neighborhood": "Manhattan",
+    "tags": ["museum", "planning", "timing"],
+    "content": "For museum hopping, pair one large museum with one smaller gallery each day. Large museums can consume 3 to 5 hours, so add flexible food breaks and avoid packing more than two major indoor attractions.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "DUMBO + Brooklyn Bridge Evening",
+    "category": "itinerary",
+    "neighborhood": "Brooklyn",
+    "tags": ["sunset", "brooklyn bridge", "photos"],
+    "content": "A classic evening plan is to walk the Brooklyn Bridge from Manhattan to Brooklyn around golden hour, then explore DUMBO waterfront views and Jane's Carousel area. Finish with pizza or casual dinner before taking the F, A/C, or ferry back.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Transit Reliability Tips",
+    "category": "transport",
+    "neighborhood": "Citywide",
+    "tags": ["subway", "timing", "planning"],
+    "content": "Subway service can vary by line and time of day. For tighter schedules, leave 15 to 20 minutes of buffer before tours or reservations, and avoid depending on a single transfer when there are alternate routes.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Budget-Friendly 2-Day NYC Itinerary Details",
+    "category": "itinerary",
+    "neighborhood": "Citywide",
+    "tags": ["budget", "2-day", "itinerary", "morning", "afternoon", "evening"],
+    "content": "Budget 2-day NYC itinerary: Day 1 Morning walk Brooklyn Bridge and DUMBO photos, Afternoon Chinatown and Lower East Side food stops, Evening Staten Island Ferry skyline views. Day 2 Morning Central Park highlights, Afternoon choose one museum near the park, Evening Times Square or Bryant Park walk. Use subway for most transfers and keep paid attractions to one per day.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Best Pizza Spots in Brooklyn Shortlist",
+    "category": "food",
+    "neighborhood": "Brooklyn",
+    "tags": ["pizza", "brooklyn", "dumbo", "williamsburg", "park slope"],
+    "content": "A practical Brooklyn pizza shortlist for visitors includes Juliana's in DUMBO, Grimaldi's in DUMBO, L'industrie Pizzeria in Williamsburg, and neighborhood slice shops around Park Slope and Carroll Gardens. Pair pizza stops with nearby walks at Brooklyn Bridge Park, Domino Park, or Prospect Park.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  },
+  {
+    "title": "Evening Activities Near Times Square",
+    "category": "nightlife",
+    "neighborhood": "Midtown",
+    "tags": ["times square", "evening", "broadway", "bryant park"],
+    "content": "Evening ideas near Times Square: catch a Broadway show, eat in Hell's Kitchen, visit Bryant Park and the New York Public Library exterior, then end with a Midtown rooftop view. For lower cost plans, skip observation decks and focus on theater district walks and public spaces.",
+    "source_type": "handcrafted",
+    "source": "travelwise_dataset_v1"
+  }
+]

@@ -1,0 +1,16 @@
+flowchart LR
+    U["User Query (Streamlit UI)"] --> R["Adaptive Router\n(VECTOR_ONLY | WEB_ONLY | VECTOR_THEN_WEB_FALLBACK)"]
+
+    R -->|"vector path"| VR["Vector Retriever"]
+    R -->|"web path"| WS["Tavily Web Search Tool"]
+
+    KB["Local NYC Knowledge Base\n(JSON + Optional PDFs)"] --> ING["Ingestion + Chunking"] --> EMB["Embeddings"] --> VDB["FAISS Vector DB"] --> VR
+
+    VR --> CB["Context Builder + Source Attribution"]
+    WS --> CB
+
+    CB --> LLM["LLM Response Generator\n(Gemini or fallback mode)"] --> UI["Streamlit Chat Response\n+ citations + debug panel"]
+
+    CFG["Environment + Config Layer\n(.env, settings validation)"] -.-> R
+    CFG -.-> WS
+    CFG -.-> LLM

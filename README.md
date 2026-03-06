@@ -1,154 +1,183 @@
-# TravelWiseNYC-Chatbot
-👋 Welcome to TravelWise NYC!
+# TravelWise: Adaptive RAG Travel Assistant for NYC
 
-## Introduction:
-Are you planning a trip to the Big Apple, or just looking to discover something new in New York City? TravelWise NYC is your smart, always-on travel companion!
-Whether you're searching for the best pizza in Brooklyn, hidden art galleries, or the fastest subway route, our intelligent chatbot delivers up-to-date, reliable answers-right when you need them.
+TravelWise is a portfolio-grade Applied AI project that demonstrates **adaptive RAG** for travel planning in New York City. It routes queries between a local vector knowledge base and live web search (Tavily), then returns grounded responses with source attribution.
 
-🚀 What Can TravelWise NYC Do for You?
+## Problem Statement
+Most travel chatbots either hallucinate or become stale. TravelWise solves this by combining:
+- **local retrieval** for stable NYC guidance (itineraries, neighborhoods, museum/food planning)
+- **web retrieval** for dynamic information (events, weather, closures, ticket/hours updates)
+- **grounded generation** with transparent sources and debug metadata
 
-- Ask Anything NYC: Museums, parks, food, transit, events-just type your question!
-- Real-Time Answers: Combines trusted local knowledge with live web search for the freshest info.
-- Easy to Use: Clean, intuitive web interface. No technical skills needed.
-- Always Improving: Learns from your questions to get smarter every day.
+## Why This Project Matters (AI Engineer Positioning)
+This project highlights practical AI engineering skills recruiters look for:
+- adaptive retrieval and tool routing
+- modular RAG system design
+- environment-driven configuration
+- source-grounded responses
+- evaluation and observability mindset
+- productized Streamlit demo UX
 
-In this project we'll develop a Retreival Augmented Generation workflow using Agents from LangGraph.
-This project will help you to understand the basic of Adaptive RAG and Agents in LangGraph and also provide a real world example of Agents.
+## Key Features
+- Adaptive router with explicit modes:
+  - `VECTOR_ONLY`
+  - `WEB_ONLY`
+  - `VECTOR_THEN_WEB_FALLBACK`
+- FAISS vector retrieval over curated NYC knowledge
+- Tavily web fallback for fresh/dynamic questions
+- Retrieval confidence heuristic for fallback decisions
+- Source attribution (local + web URLs)
+- Streamlit chat app with route indicators and debug panel
+- Environment checks (`python run.py doctor`)
 
-## Goal of The Project:
-The aim of this project is to improve the traveling experience of tourists visiting New York City by providing general and up-to-date information about the city.
-With this application, tourists will be able to get answers to general questions such as 'Where is the Empire State Building?' or 'What should I eat in Chinatown?' as well as up-to-date questions such as 'What are the subway ticket fares in New York?' or 'What is the weather like in New York City?'
+## Architecture Overview
+High-level flow:
+1. User asks a travel question in Streamlit.
+2. Router decides retrieval mode.
+3. System uses vector retrieval and/or Tavily search.
+4. Context builder aggregates evidence with source metadata.
+5. LLM generator returns grounded answer with practical formatting.
 
-## Key Features:
+Architecture docs:
+- [Architecture write-up](Docs/architecture.md)
+- [Mermaid source](diagrams/travelwise_architecture.mmd)
+- [Architecture PNG](Docs/architecture.png)
 
-- 🧠 Dynamic routing between vector database information and live web search
-- ✅ Self-verification mechanism ensuring high-quality responses
-- 🎨 Clean, user-friendly web interface with markdown support
-- 🔍 Smart context-aware recommendations
-- ⚡ Real-time updates for NYC information
-- 📊 Performance tracking and analytics
-- 📱 Responsive design
+## Tech Stack
+- **App/UI**: Streamlit
+- **API**: Flask
+- **RAG**: LangChain + FAISS
+- **Embeddings/LLM**: Gemini (with local fallback mode)
+- **Web tool**: Tavily
+- **Data**: JSON + optional PDF ingestion
+- **Testing**: Pytest
 
-## 📁 Project Structure
-
-```
+## Repository Structure
+```text
 TravelWise-Project-Using-RAG/
-│
-├── data/                        # PDF knowledge base files
-├── mgllm/                       # (custom LLM utilities, if any)
-├── nyc_faiss_google_index/      # FAISS vector index files
-│   ├── index.faiss
-│   └── index.pkl
-├── static/
-│   ├── images/
-│   └── styles.css               # Custom CSS for frontend
-├── templates/
-│   ├── error.html
-│   ├── index.html
-│   └── result.html
-├── tllm/                        # (custom LLM code, if any)
-├── .env                         # API keys and configuration
-├── app.py                       # Main Flask application
-├── requirements.txt             # Python dependencies
-
+├── app.py
+├── run.py
+├── README.md
+├── requirements.txt
+├── .env.example
+├── demo/
+│   ├── screenshots/
+│   └── demo_script.md
+├── docs/
+│   ├── architecture.md
+│   ├── architecture.png
+│   └── prompts.md
+├── diagrams/
+│   └── travelwise_architecture.mmd
+├── data/
+│   ├── raw/
+│   │   └── nyc_knowledge.json
+│   ├── processed/
+│   └── vectorstore/
+├── notebooks/
+├── tests/
+│   └── test_rag_smoke.py
+└── travelwise/
+    ├── app/
+    │   ├── api/server.py
+    │   └── ui/streamlit_app.py
+    └── src/
+        ├── config/settings.py
+        ├── ingestion/
+        ├── retrieval/
+        ├── routing/
+        ├── llm/
+        ├── tools/
+        ├── chains/
+        ├── evaluation/
+        └── utils/
 ```
 
-## 🔧 Installation
+## Adaptive Routing Logic
+- **`WEB_ONLY`**: dynamic intent detected (`today`, `tonight`, `weather`, `news`, `hours`, `price`, `events`) and Tavily is configured.
+- **`VECTOR_ONLY`**: static intent or web tool unavailable.
+- **`VECTOR_THEN_WEB_FALLBACK`**: vector retrieval first; if confidence is low and Tavily is available, web context is appended.
 
-1. **Prerequisites**
-- Python 3.8+
-- pip (Python package installer)
-- Git
-
-2. **Clone Repository**
-   ```bash
-   git clone https://github.com/Mounika-Geriki/TravelWise-Project-Using-RAG.git
-   cd TravelWise-Project-Using-RAG
-   ```
-
-3. **Set Up Virtual Environment**
-   ```bash
-   # Create virtual environment
-    python -m venv venv
-    source venv/bin/activate
-   ```
-4. **Install Dependencies**
-   ```bash
-    pip install -r requirements.txt
-   ```
-📦 Requirements
- The main dependencies include:
-   
-  ``` bash
-  flask==2.0.1
-  langchain==0.1.5
-  langchain_community==0.0.12
-  faiss-cpu==1.7.4
-  pymupdf==1.23.8
-  requests==2.31.0
-  python-dotenv==1.0.0
-  tavily-python==0.2.1
-  ```
-## ⚙️**Configuration**
-
-Create a .env file in the root directory with the following variables:
-```
-GEMINI_API_KEY=your_google_gemini_api_key
-TAVILY_API_KEY=your_tavily_api_key
+## Setup
+### 1. Install
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
- **API Keys**
- 
-You'll need to obtain the following API keys:
-
-Google AI Studio (Gemini): Get your API key from [Google AI Studio](https://aistudio.google.com/prompts/new_chat)
-Tavily API: Register for a key at [Tavily](https://app.tavily.com/home)
-
-**Knowledge Base**
-- Place your NYC-related PDF documents in the data/ folder.
-- On first run, the FAISS vector index will be built from these files and saved in nyc_faiss_google_index/.
-
-## **Running the Application**
-1. Start the Flask Server
-
-``` bash
-python app.py
-
-```
-- The web app will be available at http:.
-- The main interface is served from templates/index.html.
-
-
-## Example Queries
-
-```
-"What are the top museums in NYC?"
-"Best pizza spots in NYC"
-"How to travel to Brooklyn from Manhattan?"
-"What parks can I visit in NYC?"
-"3-day NYC itinerary"
+### 2. Configure environment
+```bash
+cp .env.example .env
 ```
 
-## 📊 Performance Tracking
-The application tracks performance metrics:
+Required/important variables:
+- `GEMINI_API_KEY=` recommended for best generation/embedding quality
+- `TAVILY_API_KEY=` optional but needed for live web fallback
+- `EMBEDDING_MODEL=` default `models/gemini-embedding-001`
+- `CHAT_MODEL=` default `gemini-1.5-flash`
+- `LANGCHAIN_TRACING_V2=` optional (`true`/`false`)
+- `LANGCHAIN_PROJECT=` default `TravelWise`
 
-- Total queries processed
-- Successfully answered queries
-- Query rejection rate
-- Processing errors
-- Answer generation rate
+Tavily key setup:
+1. Create account at [Tavily](https://app.tavily.com/home)
+2. Copy API key
+3. Add to `.env` as `TAVILY_API_KEY=...`
 
-## Future Enhancements
-- Predictive analytics for user intent.
-- Real-time push notifications (weather, transit).
-- Multimodal (image/video) support.
-- Expansion to other cities and document types.
+### 3. Build index
+```bash
+python run.py build-index
+```
 
+### 4. Run app
+```bash
+streamlit run travelwise/app/ui/streamlit_app.py
+```
 
+## Additional Commands
+```bash
+python run.py doctor          # config validation and startup warnings
+python run.py eval            # sample query evaluation pass
+python run.py api             # Flask API mode
+pytest -q                     # smoke tests
+```
 
+## Data Ingestion
+- Seed data: `data/raw/nyc_knowledge.json`
+- Optional PDFs: `Docs/*.pdf` (enable with `INCLUDE_PDF_DOCS=true`)
+- Chunk debug output: `data/processed/chunks_debug.jsonl`
 
+## Sample Queries
+- Plan me a 1-day food tour in Manhattan
+- What are the top museums near Central Park?
+- Suggest a budget-friendly 2-day NYC itinerary
+- What are the best pizza spots in Brooklyn?
+- Things to do near Times Square in the evening
+- What events are happening tonight near Times Square?
 
+## Screenshots
+Capture and place under `demo/screenshots/`:
+- `home.png` (hero + sidebar status)
+- `vector_answer.png` (itinerary with local citations)
+- `adaptive_or_web.png` (dynamic query showing mode/path)
+- `debug_panel.png` (retrieval confidence + route metadata)
 
-## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) file for details.
+## Evaluation and Observability
+- `run.py eval` tests representative queries and retrieval behavior.
+- UI debug panel exposes:
+  - routing mode
+  - execution path
+  - retrieval confidence
+  - source list
+- `run.py doctor` surfaces missing key/config warnings.
 
+## Limitations
+- Without `GEMINI_API_KEY`, responses run in fallback mode.
+- Without `TAVILY_API_KEY`, adaptive web routing degrades to vector-only fallback.
+- Current confidence metric is heuristic; can be upgraded with learned rerankers.
+
+## Extensibility Roadmap
+- Add hybrid retrieval (BM25 + dense)
+- Add reranker for higher precision top-k context
+- Add structured JSON output mode for itinerary UI rendering
+- Add automated regression/eval suite with answer quality checks
+- Expand to multi-city support via pluggable datasets
