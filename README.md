@@ -8,15 +8,6 @@ Most travel chatbots either hallucinate or become stale. TravelWise solves this 
 - **web retrieval** for dynamic information (events, weather, closures, ticket/hours updates)
 - **grounded generation** with transparent sources and debug metadata
 
-## Why This Project Matters (AI Engineer Positioning)
-This project highlights practical AI engineering skills recruiters look for:
-- adaptive retrieval and tool routing
-- modular RAG system design
-- environment-driven configuration
-- source-grounded responses
-- evaluation and observability mindset
-- productized Streamlit demo UX
-
 ## Key Features
 - Adaptive router with explicit modes:
   - `VECTOR_ONLY`
