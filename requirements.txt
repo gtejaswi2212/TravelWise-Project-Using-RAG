@@ -1,12 +1,10 @@
-Flask==3.1.0
 streamlit==1.44.1
 langchain==0.3.24
 langchain-community==0.3.22
 langchain-core==0.3.55
-faiss-cpu==1.10.0
+faiss-cpu==1.13.2
 PyMuPDF==1.25.5
 python-dotenv==1.1.0
 requests==2.32.3
 tavily-python==0.6.0
 numpy==2.1.3
-pytest==8.3.5
